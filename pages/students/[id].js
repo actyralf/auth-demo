@@ -16,11 +16,11 @@ const StudentDetails = ({ student }) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({ req, params }) {
   try {
-    const { id } = context.params;
+    const { id } = params;
     const response = await axios.get(
-      `http://localhost:3000/api/students/${id}`
+      `http://${req.headers.host}/api/students/${id}`
     );
     const student = response.data;
     return { props: { student } };

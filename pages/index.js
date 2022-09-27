@@ -32,8 +32,8 @@ const StyledList = styled.ul`
   gap: 8px;
 `;
 
-export async function getServerSideProps() {
-  const response = await axios.get("http://localhost:3000/api/students");
+export async function getServerSideProps({ req }) {
+  const response = await axios.get(`http://${req.headers.host}/api/students`);
 
   return { props: { students: response.data } };
 }
