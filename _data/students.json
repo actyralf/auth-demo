@@ -1,0 +1,50 @@
+[
+  {
+    "firstName": "Mate",
+    "lastName": "Kamaras",
+    "capstoneProject": "Invoicify",
+    "capstoneProjectDescription": "Easy invoices for everyone"
+  },
+  {
+    "firstName": "Julian",
+    "lastName": "Köhn",
+    "capstoneProject": "Medical Cannabis",
+    "capstoneProjectDescription": "Find an expert for cannabis therapy"
+  },
+  {
+    "firstName": "Nassir",
+    "lastName": "Alkourdi",
+    "capstoneProject": "Todos for you",
+    "capstoneProjectDescription": "Stay organized!"
+  },
+  {
+    "firstName": "Marvin",
+    "lastName": "Reich",
+    "capstoneProject": "",
+    "capstoneProjectDescription": ""
+  },
+  {
+    "firstName": "Anne",
+    "lastName": "Hölscher",
+    "capstoneProject": "Travel Diary",
+    "capstoneProjectDescription": "Travel Diary"
+  },
+  {
+    "firstName": "Omer",
+    "lastName": "Algin",
+    "capstoneProject": "Tape Recorder",
+    "capstoneProjectDescription": "Pure retro sound"
+  },
+  {
+    "firstName": "Dennis",
+    "lastName": "Warchocki",
+    "capstoneProject": "Nutrition Trackr",
+    "capstoneProjectDescription": "Track nutrition and be happy"
+  },
+  {
+    "firstName": "Niklas",
+    "lastName": "Ostwald",
+    "capstoneProject": "World of Cocktails",
+    "capstoneProjectDescription": "Track nutrition and be happy"
+  }
+]
