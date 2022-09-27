@@ -6,7 +6,7 @@ import styled from "styled-components";
 const StudentDetails = ({ student }) => {
   return (
     <Container>
-      <Link href="/">
+      <Link href="/" passHref>
         <StyledBackLink>{"<<"} Zurück zur Übersicht</StyledBackLink>
       </Link>
       <h1>{`${student.firstName} ${student.lastName}`}</h1>
