@@ -6,8 +6,8 @@ import { Container } from "../components/container";
 const Students = ({ students }) => {
   return (
     <Container>
-      <h1>Students</h1>
-      <ul>
+      <h1>Otter unter sich</h1>
+      <StyledList>
         {students.map((student) => {
           return (
             <li key={student._id}>
@@ -19,10 +19,18 @@ const Students = ({ students }) => {
             </li>
           );
         })}
-      </ul>
+      </StyledList>
     </Container>
   );
 };
+
+const StyledList = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
 
 export async function getServerSideProps() {
   const response = await axios.get("http://localhost:3000/api/students");

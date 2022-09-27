@@ -14,6 +14,10 @@ const StudentSchema = new Schema({
     type: String,
     required: false,
   },
+  capstoneProjectDescription: {
+    type: String,
+    required: false,
+  },
 });
 
 mongoose.models = {};

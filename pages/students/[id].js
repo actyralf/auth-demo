@@ -5,7 +5,8 @@ const StudentDetails = ({ student }) => {
   return (
     <Container>
       <h1>{`${student.firstName} ${student.lastName}`}</h1>
-      <p>Project: {`${student.capstoneProject}`}</p>
+      <h4>{`${student.capstoneProject}`}</h4>
+      <p>{`${student.capstoneProjectDescription}`}</p>
     </Container>
   );
 };
