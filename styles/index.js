@@ -24,7 +24,8 @@ export const GlobalStyle = createGlobalStyle`
         color: #2b2d42;
         
 	}
-    a:link, a:visited {
+    a, a:link, a:visited {
+        cursor:pointer;
         text-decoration:none;
         color: #2b2d42;
     }
