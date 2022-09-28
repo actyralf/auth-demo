@@ -1,7 +1,6 @@
 import { Container } from "../../components/container";
 import Link from "next/link";
 import styled from "styled-components";
-import { getToken } from "next-auth/jwt";
 
 const StudentDetails = ({ student, error }) => {
   if (error) {
@@ -30,19 +29,9 @@ const StudentDetails = ({ student, error }) => {
 
 export async function getServerSideProps({ req, res, params }) {
   try {
-    const token = await getToken({
-      req,
-      secret: process.env.NEXTAUTH_SECRET,
-      raw: true,
-    });
     const { id } = params;
     const response = await fetch(
-      `http://${req.headers.host}/api/students/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+      `http://${req.headers.host}/api/students/${id}`
     );
     if (response.ok) {
       const student = await response.json();
