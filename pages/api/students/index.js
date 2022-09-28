@@ -7,7 +7,11 @@ const handler = async (req, res) => {
       const students = await Student.find({}).exec();
       return res.status(200).json(
         students.map((student) => {
-          const { capstoneProject, ...reducedStudent } = student.toObject();
+          const {
+            capstoneProject,
+            capstoneProjectDescription,
+            ...reducedStudent
+          } = student.toObject();
           return reducedStudent;
         })
       );
