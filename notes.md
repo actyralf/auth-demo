@@ -1,4 +1,0 @@
-- **important** next v 12.2.5
-- **important** node 16.13.0
-- `npm i next-auth`
-- configure Github App (callback url: `/api/auth/callback/github`)

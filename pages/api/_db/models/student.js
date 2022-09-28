@@ -10,6 +10,10 @@ const StudentSchema = new Schema({
     type: String,
     required: true,
   },
+  githubUserName: {
+    type: String,
+    required: true,
+  },
   capstoneProject: {
     type: String,
     required: false,

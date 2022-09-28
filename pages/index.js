@@ -1,24 +1,52 @@
 import styled from "styled-components";
-import axios from "axios";
 import Link from "next/link";
 import { Container } from "../components/container";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-const Students = ({ students }) => {
+const Students = ({ students, error }) => {
   const { data: session } = useSession();
+  if (error) {
+    return (
+      <Container>
+        <p>{error}</p>
+      </Container>
+    );
+  }
   return (
     <Container>
-      <p>{session ? session.user.email : <a onClick={signIn}>Anmelden</a>}</p>
+      <p>
+        {session ? (
+          <>
+            <span>
+              Hallo{" "}
+              <span style={{ color: "#7b2cbf", fontWeight: "bold" }}>
+                {session.user.name}
+              </span>
+            </span>{" "}
+            <a style={{ fontSize: "0.6em" }} href="#" onClick={signOut}>
+              Abmelden
+            </a>
+          </>
+        ) : (
+          <a href="#" onClick={() => signIn("github")}>
+            Anmelden
+          </a>
+        )}
+      </p>
       <h1>Otter unter sich</h1>
       <StyledList>
         {students.map((student) => {
           return (
             <li key={student._id}>
-              <Link href={`/students/${student._id}`} passHref>
-                <a>
-                  {student.lastName}, {student.firstName}
-                </a>
-              </Link>
+              {session?.user.name === student.githubUserName ? (
+                <Link href={`/students/${student._id}`} passHref>
+                  <StyledAnchor>
+                    {student.lastName}, {student.firstName}
+                  </StyledAnchor>
+                </Link>
+              ) : (
+                `${student.lastName}, ${student.firstName}`
+              )}
             </li>
           );
         })}
@@ -35,10 +63,30 @@ const StyledList = styled.ul`
   gap: 8px;
 `;
 
-export async function getServerSideProps({ req }) {
-  const response = await axios.get(`http://${req.headers.host}/api/students`);
+const StyledAnchor = styled.a`
+  font-weight: bold;
+  &:link,
+  &:visited {
+    color: #7b2cbf;
+  }
+  &:active,
+  &:hover {
+    color: white;
+  }
+`;
 
-  return { props: { students: response.data } };
+export async function getServerSideProps({ req }) {
+  try {
+    const response = await fetch(`http://${req.headers.host}/api/students`);
+    if (response.ok) {
+      const students = await response.json();
+      return { props: { students } };
+    } else {
+      throw new Error(response.statusText);
+    }
+  } catch (err) {
+    return { props: { error: err.message } };
+  }
 }
 
 export default Students;
