@@ -23,7 +23,7 @@ Mit diesem Token ruft der Nutzer dann unsere geschützten API-Routen auf. Da wir
 
 ## Was passiert im Hintergrund?
 
-![Auth Flow](_data/auth-flow.png)
+![Auth Flow Image](_data/auth-flow.png)
 
 ## Was ist NextAuth?
 
