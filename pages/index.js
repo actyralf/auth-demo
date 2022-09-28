@@ -5,6 +5,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 const Students = ({ students, error }) => {
   const { data: session } = useSession();
+
   if (error) {
     return (
       <Container>
@@ -38,7 +39,7 @@ const Students = ({ students, error }) => {
         {students.map((student) => {
           return (
             <li key={student._id}>
-              {session?.user.name === student.githubUserName ? (
+              {session?.user.email === student.githubUserName ? (
                 <Link href={`/students/${student._id}`} passHref>
                   <StyledAnchor>
                     {student.lastName}, {student.firstName}

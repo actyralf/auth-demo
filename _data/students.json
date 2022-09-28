@@ -24,8 +24,8 @@
     "firstName": "Marvin",
     "lastName": "Reich",
     "githubUserName": "Marvin678",
-    "capstoneProject": "",
-    "capstoneProjectDescription": ""
+    "capstoneProject": "Rezepte aus aller Welt",
+    "capstoneProjectDescription": "Alles was schmeckt!"
   },
   {
     "firstName": "Anne",
@@ -53,13 +53,27 @@
     "lastName": "Ostwald",
     "githubUserName": "nikstaaar",
     "capstoneProject": "World of Cocktails",
-    "capstoneProjectDescription": "Track nutrition and be happy"
+    "capstoneProjectDescription": "Shake it!"
   },
   {
     "firstName": "Ralf",
     "lastName": "Siewert",
-    "githubUserName": "actyralf",
+    "githubUserName": "ralf.siewert@actyvy.st",
     "capstoneProject": "Otter unter sich",
     "capstoneProjectDescription": "Eine App nur für Otter"
+  },
+  {
+    "firstName": "Julia",
+    "lastName": "Löschel",
+    "githubUserName": "julialoeschel",
+    "capstoneProject": "Midway",
+    "capstoneProjectDescription": "Meet me in the middle!"
+  },
+  {
+    "firstName": "Mareike",
+    "lastName": "Bosselmann",
+    "githubUserName": "mareike.bosselmann@gmx.de",
+    "capstoneProject": "Readaholic",
+    "capstoneProjectDescription": "Your individual reading journal"
   }
 ]
