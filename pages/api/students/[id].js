@@ -9,6 +9,9 @@ const handler = async (req, res) => {
         req,
         secret: process.env.NEXTAUTH_SECRET,
       });
+      if (!user) {
+        return res.status(401).json({ message: "unauthorized" });
+      }
       const student = await Student.findById(req.query.id).exec();
       if (user.name !== student.githubUserName) {
         return res.status(401).json({ message: "unauthorized" });
