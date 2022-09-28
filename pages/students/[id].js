@@ -12,14 +12,8 @@ const StudentDetails = ({ student, error }) => {
       <Link href="/" passHref>
         <StyledBackLink>Zurück zur Übersicht</StyledBackLink>
       </Link>
+
       <h1>{`${student.firstName} ${student.lastName}`}</h1>
-      <a
-        href={`https://github.com/${student.githubUserName}`}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {student.githubUserName} on Github
-      </a>
       <p>
         <strong>Capstone Project: {student.capstoneProject} </strong>
       </p>
