@@ -3,6 +3,8 @@ import Link from "next/link";
 import { Container } from "../components/container";
 import { useSession, signIn, signOut } from "next-auth/react";
 
+const isPreview = process.env.VERCEL_ENV === "preview";
+
 const Students = ({ students, error }) => {
   const { data: session } = useSession();
 
@@ -29,7 +31,10 @@ const Students = ({ students, error }) => {
             </a>
           </>
         ) : (
-          <a href="#" onClick={() => signIn("github")}>
+          <a
+            href="#"
+            onClick={() => signIn(isPreview ? "credentials" : "github")}
+          >
             Anmelden
           </a>
         )}
