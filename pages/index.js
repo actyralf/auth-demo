@@ -17,7 +17,7 @@ const Students = ({ students, error }) => {
   }
   return (
     <Container>
-      <p>{isPreview ? "true" : "false"}</p>
+      <p>Is Preview{isPreview ? "true" : "false"}</p>
       <p>
         {session ? (
           <>
