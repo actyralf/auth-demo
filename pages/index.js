@@ -3,9 +3,7 @@ import Link from "next/link";
 import { Container } from "../components/container";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-const isPreview = process.env.VERCEL_ENV === "preview";
-
-const Students = ({ students, error }) => {
+const Students = ({ students, error, isPreview }) => {
   const { data: session } = useSession();
 
   if (error) {
@@ -84,10 +82,12 @@ const StyledAnchor = styled.a`
 
 export async function getServerSideProps({ req }) {
   try {
+    const isPreview = process.env.VERCEL_ENV === "preview";
+
     const response = await fetch(`http://${req.headers.host}/api/students`);
     if (response.ok) {
       const students = await response.json();
-      return { props: { students } };
+      return { props: { students, isPreview } };
     } else {
       throw new Error(response.statusText);
     }
